@@ -1,0 +1,90 @@
+$indendVertical: 20px;
+$indentHorizontal: 30px;
+
+html,
+body {
+    height: 100%;
+}
+
+.app {
+    display: block;
+    min-height: 100%;
+    position: relative;
+    padding: $indendVertical $indentHorizontal;
+    box-sizing: border-box;
+}
+.background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: #f6f2de;
+    
+    &:hover {
+        background-color: #e9e6d3;
+    }
+}
+.cards {
+    display: block;
+    position: absolute;
+    top: $indendVertical;
+    left: $indentHorizontal;
+    right: $indentHorizontal;
+    bottom: $indendVertical;
+    z-index: 1;
+    line-height: 0;
+
+    &__item {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 400px;
+        max-width: 400px;
+        height: 100%;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 0 5px 2px #e1ddcb;
+        white-space: nowrap;
+        text-align: center;
+        cursor: pointer;
+
+        &:last-child:first-child {
+            left: 0;
+        }
+        &:last-child {
+            left: 60px;
+        }
+        &--wide {
+            right: 0;
+            
+            &:last-child {
+                max-width: 960px;
+            }
+        }
+        &:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        &__number {
+            display: inline-block;
+            vertical-align: middle;
+            width: 102px;
+            height: 102px;
+            border-radius: 50%;
+            border: 4px solid #000;
+            font-size: 78px;
+            line-height: 102px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+    }
+}

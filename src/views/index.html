@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cards</title>
+        <meta charset="utf-8" />
+        <base href="/" />
+
+        <!-- inject:css -->
+        <!-- endinject -->
+          
+        <!-- inject:js -->
+        <!-- endinject -->
+
+    </head>
+    <body>
+        <div class="app">
+            <div class="background"></div>
+            <div id="cardsContainer" class="cards"></div>
+            <script id="cardsTemplate" type="text/x-handlebars-template">
+                {{#each this bind=true}}
+                    {{#if_eq type 'wide'}}
+                        <div class="cards__item cards__item--wide" 
+                             onclick="clickOnCard(event, {{@index}})">
+                            <div class="cards__item__number">{{inc @index}}</div>
+                        </div>
+                    {{else}}
+                        <div class="cards__item"
+                             onclick="clickOnCard(event, {{@index}})">
+                            <div class="cards__item__number">{{inc @index}}</div>
+                        </div>
+                    {{/if_eq}}
+                {{/each}}
+            </script>
+        </div>
+    </body>
+</html>
